@@ -160,6 +160,12 @@ public struct NeuConstants {
         let lightDirection: NeuConstants.NeuLightDirection
         let colors: [CGColor]
         let borderWidth: CGFloat
+      
+        public init(lightDirection: NeuConstants.NeuLightDirection, colors: [CGColor], borderWidth: CGFloat) {
+          self.lightDirection = lightDirection
+          self.colors = colors
+          self.borderWidth = borderWidth
+        }
     }
     
     /// Defines custom model to create neu button
