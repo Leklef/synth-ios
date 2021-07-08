@@ -97,7 +97,7 @@ class NeuView: UIView {
 
     private func setupInnerLightShadowLayer() {
 
-        guard !model.hideLightShadow else { return }
+        guard !model.hideLightShadow else { lightShadowLayer?.isHidden = true; return }
 
         let (xOffset, yOffset) = getShadowAttributes(isLightShadow: true)
         lightShadowLayer = CALayer()
@@ -108,7 +108,7 @@ class NeuView: UIView {
 
     private func setupInnerDarkShadowLayer() {
 
-        guard !model.hideDarkShadow else { return }
+        guard !model.hideDarkShadow else { darkShadowLayer?.isHidden = true; return }
 
         let (xOffset, yOffset) = getShadowAttributes(isLightShadow: false)
         darkShadowLayer = CALayer()
@@ -119,7 +119,7 @@ class NeuView: UIView {
 
     private func setupOuterDarkShadowLayer(bounds: CGRect) {
 
-        guard !model.hideDarkShadow else { return }
+        guard !model.hideDarkShadow else { darkShadowLayer?.isHidden = true; return }
 
         let (xOffset, yOffset) = getShadowAttributes(isLightShadow: false)
         darkShadowLayer = CALayer()
@@ -130,7 +130,7 @@ class NeuView: UIView {
 
     private func setupOuterLightShadowLayer(bounds: CGRect) {
 
-        guard !model.hideLightShadow else { return }
+        guard !model.hideLightShadow else { lightShadowLayer?.isHidden = true; return }
 
         let (xOffset, yOffset) = getShadowAttributes(isLightShadow: true)
         lightShadowLayer = CALayer()
